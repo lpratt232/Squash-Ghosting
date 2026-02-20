@@ -188,8 +188,56 @@
     <p class="subtitle">Squash Court Trainer</p>
   </div>
 
-  <!-- Settings Toggle -->
-  <button class="btn-settings" id="btnToggleSettings" onclick="toggleSettings()">
+  <!-- Summary + Start/Stop (TOP) -->
+  <div class="summary-row" id="summaryRow">
+    <span><span class="val" id="sumInterval"></span> interval</span>
+    <span><span class="val" id="sumTotal"></span> total</span>
+    <span><span class="val" id="sumPos"></span> positions</span>
+  </div>
+  <button class="btn-main start" id="btnMain" onclick="toggleRun()">START GHOSTING</button>
+
+  <!-- Session Done -->
+  <div class="session-done hidden" id="sessionDone">
+    <h2>SESSION COMPLETE</h2>
+    <div style="color:#555;font-size:14px;margin-bottom:4px" id="doneStats"></div>
+    <div style="color:#333;font-size:12px;margin-bottom:24px" id="doneDetail"></div>
+    <button class="btn-new" onclick="resetSession()">NEW SESSION</button>
+  </div>
+
+  <!-- Number Display -->
+  <div class="number-display" id="numberDisplay">
+    <div class="big-number inactive" id="bigNumber">—</div>
+    <div class="pos-label hidden" id="posLabel"></div>
+  </div>
+
+  <!-- Timers -->
+  <div class="hidden" id="timersSection">
+    <div class="timer-row">
+      <span>Session</span>
+      <span id="sessionTime" style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#888"></span>
+    </div>
+    <div class="bar session"><div class="bar-fill" id="sessionBar" style="width:0;background:linear-gradient(90deg,#FF4400,#CC3600)"></div></div>
+    <div class="timer-row">
+      <span>Next position</span>
+      <span id="nextTime" style="font-weight:700;color:#777"></span>
+    </div>
+    <div class="bar"><div class="bar-fill" id="nextBar" style="width:0;background:linear-gradient(90deg,#333,#555)"></div></div>
+  </div>
+
+  <!-- Court -->
+  <div class="court-box" id="courtBox">
+    <div class="section-label" style="text-align:center" id="courtLabel">Court Map · 6 Positions</div>
+    <svg id="courtSvg" viewBox="0 0 100 130" style="width:100%;height:auto"></svg>
+  </div>
+
+  <!-- History -->
+  <div class="hidden" id="historySection" style="margin-top:24px">
+    <div class="section-label" id="historyLabel">History</div>
+    <div class="history-grid" id="historyGrid"></div>
+  </div>
+
+  <!-- Settings Toggle (BOTTOM) -->
+  <button class="btn-settings" id="btnToggleSettings" onclick="toggleSettings()" style="margin-top:24px">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
     </svg>
@@ -229,54 +277,6 @@
       <button onclick="applyPreset(8,600)">Intense</button>
       <button onclick="applyPreset(12,900)">Endurance</button>
     </div>
-  </div>
-
-  <!-- Session Done -->
-  <div class="session-done hidden" id="sessionDone">
-    <h2>SESSION COMPLETE</h2>
-    <div style="color:#555;font-size:14px;margin-bottom:4px" id="doneStats"></div>
-    <div style="color:#333;font-size:12px;margin-bottom:24px" id="doneDetail"></div>
-    <button class="btn-new" onclick="resetSession()">NEW SESSION</button>
-  </div>
-
-  <!-- Number Display -->
-  <div class="number-display" id="numberDisplay">
-    <div class="big-number inactive" id="bigNumber">—</div>
-    <div class="pos-label hidden" id="posLabel"></div>
-  </div>
-
-  <!-- Timers -->
-  <div class="hidden" id="timersSection">
-    <div class="timer-row">
-      <span>Session</span>
-      <span id="sessionTime" style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:#888"></span>
-    </div>
-    <div class="bar session"><div class="bar-fill" id="sessionBar" style="width:0;background:linear-gradient(90deg,#FF4400,#CC3600)"></div></div>
-    <div class="timer-row">
-      <span>Next position</span>
-      <span id="nextTime" style="font-weight:700;color:#777"></span>
-    </div>
-    <div class="bar"><div class="bar-fill" id="nextBar" style="width:0;background:linear-gradient(90deg,#333,#555)"></div></div>
-  </div>
-
-  <!-- Court -->
-  <div class="court-box" id="courtBox">
-    <div class="section-label" style="text-align:center" id="courtLabel">Court Map · 6 Positions</div>
-    <svg id="courtSvg" viewBox="0 0 100 130" style="width:100%;height:auto"></svg>
-  </div>
-
-  <!-- Summary + Start/Stop -->
-  <div class="summary-row" id="summaryRow">
-    <span><span class="val" id="sumInterval"></span> interval</span>
-    <span><span class="val" id="sumTotal"></span> total</span>
-    <span><span class="val" id="sumPos"></span> positions</span>
-  </div>
-  <button class="btn-main start" id="btnMain" onclick="toggleRun()">START GHOSTING</button>
-
-  <!-- History -->
-  <div class="hidden" id="historySection" style="margin-top:24px">
-    <div class="section-label" id="historyLabel">History</div>
-    <div class="history-grid" id="historyGrid"></div>
   </div>
 
   <!-- Position Key -->
